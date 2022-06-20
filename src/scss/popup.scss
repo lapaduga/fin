@@ -95,26 +95,4 @@
 			}
 		}
 	}
-
-	&__btn {
-		border-radius: 16px;
-		display: inline-block;
-		align-self: flex-end;
-		font-size: 12px;
-		line-height: 200%;
-		text-align: right;
-		letter-spacing: 1px;
-		text-transform: uppercase;
-		color: #ffffff;
-		background: #ff3e79 url('../img/btn-arrow.svg') 90% center no-repeat;
-		padding: 4px 31px 4px 21px;
-		font-weight: 700;
-		border: 1px solid #ff3e79;
-		transition: box-shadow 0.3s ease 0s;
-		@media (any-hover: hover) {
-			&:hover {
-				box-shadow: 0 0 20px rgba(255, 62, 120, 0.5);
-			}
-		}
-	}
 }

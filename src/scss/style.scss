@@ -102,18 +102,35 @@ body {
 		}
 	}
 }
+.heading {
+	padding: 16px;
+	font-size: 16px;
+	line-height: 150%;
+	letter-spacing: -0.2px;
+	text-transform: uppercase;
+	color: #7e7e82;
+	font-weight: 500;
+	background: linear-gradient(270deg, #f8f8f8 0%, #ffffff 98.61%);
+	@media (min-width: 768px) {
+		padding: 16px 0;
+		background: linear-gradient(90deg, #f8f8f8 1.39%, #ffffff 100%);
+	}
+	@media (min-width: 1120px) {
+		background: linear-gradient(90deg, #f8f8f8 0%, #ffffff 98.61%);
+	}
+}
 .text {
 	font-size: 14px;
 	line-height: 143%;
 	letter-spacing: 0.2px;
 	color: #1b1c21;
-	p{
+	p {
 		&:not(:last-child) {
 			margin-bottom: 0;
 		}
 	}
-	@media (min-width:768px) {
-		p{
+	@media (min-width: 768px) {
+		p {
 			&:not(:last-child) {
 				margin-bottom: 16px;
 			}
@@ -189,14 +206,37 @@ body {
 		}
 	}
 }
+.btn {
+	border-radius: 16px;
+	display: inline-block;
+	align-self: flex-end;
+	font-size: 12px;
+	line-height: 200%;
+	text-align: right;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #ffffff;
+	background: #ff3e79 url("../img/btn-arrow.svg") 90% center no-repeat;
+	padding: 4px 31px 4px 21px;
+	font-weight: 700;
+	border: 1px solid #ff3e79;
+	transition: box-shadow 0.3s ease 0s;
+	@media (any-hover: hover) {
+		&:hover {
+			box-shadow: 0 0 20px rgba(255, 62, 120, 0.5);
+		}
+	}
+}
 
 // Imports
-@import './normalize';
-@import './nullstyle';
-@import './fonts';
-@import './header';
-@import './top';
-@import './about';
-@import './menu';
-@import './brands';
-@import './popup';
+@import "./normalize";
+@import "./nullstyle";
+@import "./fonts";
+@import "./header";
+@import "./top";
+@import "./about";
+@import "./menu";
+@import "./brands";
+@import "./popup";
+@import "./services";
+@import "./footer";
