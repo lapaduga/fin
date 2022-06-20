@@ -1,17 +1,202 @@
-$bgColor: #24292e;
-$text: #fff;
-
-@font-face {
-  font-family: 'Comic';
-  src: url('../fonts/comic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
-}
-
+// Common styles
 body {
-  padding: 1rem;
-  margin: 0;
-  font-family: Comic, sans-serif;
-  background-color: $bgColor;
-  color: $text;
+	font-family: "TT Lakes Medium", Arial, "Helvetica Neue", Helvetica, sans-serif;
+	&._lock {
+		overflow: hidden;
+	}
 }
+.wrapper {
+	background: #f8f8f8;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	max-width: 1440px;
+	margin: 0 auto;
+}
+.main {
+	flex: 1 1 auto;
+}
+.container {
+	max-width: 1120px;
+	margin: 0 auto;
+	padding: 0 16px;
+	@media (min-width: 768px) {
+		padding: 0 24px;
+	}
+	@media (min-width: 1120px) {
+		margin: 0 0 0 320px;
+		padding: 0 32px;
+	}
+}
+.icon {
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	background-color: #ff3e79;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: opacity 0.3s ease;
+	img {
+		max-width: 20px;
+		max-height: 20px;
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			opacity: 0.5;
+		}
+	}
+}
+.title {
+	font-size: 28px;
+	line-height: 143%;
+	letter-spacing: -0.6px;
+	color: #1b1c21;
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: -16px;
+		width: 4px;
+		height: 40px;
+		background: #41f6d7;
+		border-radius: 2px;
+	}
+	@media (min-width: 768px) {
+		&::before {
+			left: -24px;
+		}
+	}
+	@media (min-width: 1120px) {
+		&::before {
+			left: -32px;
+		}
+	}
+}
+.subtitle {
+	font-size: 24px;
+	line-height: 133%;
+	letter-spacing: -0.6px;
+	color: #1b1c21;
+	font-weight: 700;
+	position: relative;
+	&::before {
+		content: "";
+		position: absolute;
+		top: -8px;
+		left: -16px;
+		width: 4px;
+		height: 40px;
+		background: #41f6d7;
+		border-radius: 2px;
+	}
+	@media (min-width: 768px) {
+		&::before {
+			left: -24px;
+		}
+	}
+	@media (min-width: 1120px) {
+		&::before {
+			left: -32px;
+		}
+	}
+}
+.text {
+	font-size: 14px;
+	line-height: 143%;
+	letter-spacing: 0.2px;
+	color: #1b1c21;
+	p{
+		&:not(:last-child) {
+			margin-bottom: 0;
+		}
+	}
+	@media (min-width:768px) {
+		p{
+			&:not(:last-child) {
+				margin-bottom: 16px;
+			}
+		}
+	}
+}
+.logo {
+	width: 96px;
+	margin: 0 0 0 16px;
+	display: block;
+	img {
+		display: inline-block;
+		max-width: 100%;
+	}
+	@media (min-width: 768px) {
+		margin: 0 0 0 40px;
+		position: relative;
+		&:before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: -20px;
+			background: #eaeaea;
+			border-radius: 1px;
+			height: 32px;
+			width: 2px;
+			transform: translate(0, -50%);
+		}
+	}
+}
+.link {
+	display: inline-block;
+	font-size: 16px;
+	line-height: 150%;
+	letter-spacing: -0.2px;
+	color: #1b1c21;
+	font-weight: 700;
+	padding-left: 32px;
+	position: relative;
+	background-color: transparent;
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 24px;
+		height: 24px;
+		background: url("../img/link-arrows.svg") center / 8px no-repeat;
+	}
+	span {
+		position: relative;
+		&::after {
+			content: "";
+			transition: transform 0.3s ease 0s;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			height: 1px;
+			width: 100%;
+			background-color: #1b1c21;
+			transform: scaleX(0);
+			transform-origin: right;
+		}
+	}
+	@media (any-hover: hover) {
+		&:hover {
+			span {
+				&::after {
+					transform: scaleX(1);
+					transform-origin: left;
+				}
+			}
+		}
+	}
+}
+
+// Imports
+@import './normalize';
+@import './nullstyle';
+@import './fonts';
+@import './header';
+@import './top';
+@import './about';
+@import './menu';
+@import './brands';
+@import './popup';

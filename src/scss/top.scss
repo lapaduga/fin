@@ -1,0 +1,126 @@
+.top {
+	margin-bottom: 24px;
+	@media (min-width: 768px) {
+		margin-bottom: 32px;
+	}
+	@media (min-width: 1120px) {
+		margin-bottom: 24px;
+	}
+	&__body {
+		margin-top: 112px;
+		@media (min-width: 1120px) {
+			margin-top: 42px;
+		}
+	}
+
+	&__bar {
+		margin-bottom: 24px;
+		@media (min-width: 768px) {
+			margin-bottom: 32px;
+		}
+		@media (min-width: 1120px) {
+			margin-bottom: 8px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+
+	&__links {
+		display: none;
+		@media (min-width: 1120px) {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		font-size: 16px;
+		line-height: 150%;
+		letter-spacing: -0.2px;
+		color: #1b1c21;
+		margin-left: 32px;
+		span {
+			margin-right: 8px;
+			position: relative;
+			&::after {
+				content: "";
+				transition: transform 0.3s ease 0s;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 1px;
+				width: 100%;
+				background-color: #1b1c21;
+				transform: scaleX(0);
+				transform-origin: right;
+			}
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				span {
+					&::after {
+						transform: scaleX(1);
+						transform-origin: left;
+					}
+				}
+			}
+		}
+	}
+
+	&__navigation {
+		position: relative;
+		margin-right: -16px;
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0px;
+			width: 24px;
+			height: 100%;
+			background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248, 248, 248, 0.0001) 100%);
+		}
+		@media (min-width:768px) {
+			margin-right: -24px;
+		}
+		@media (min-width:1120px) {
+			margin-right: 0;
+			&::after {
+				display: none;
+			}
+		}
+	}
+	
+	&__list {
+		display: flex;
+		align-items: center;
+		overflow-x: auto;
+		overflow-y: hidden;
+	}
+
+	&__ref {
+		font-size: 16px;
+		line-height: 150%;
+		letter-spacing: -0.2px;
+		color: #7e7e82;
+		border: 2px solid transparent;
+		border-radius: 6px;
+		display: inline-block;
+		white-space: nowrap;
+		padding: 8px 12px;
+		transition: color 0.3s ease 0s;
+		@media (any-hover: hover) {
+			&:hover {
+				color: #1B1C21;
+			}
+		}
+	}
+
+	&__ref--active {
+		padding: 8px 16px;
+		border: 2px solid #B8FFEC;
+		background: #FFFFFF;
+	}
+}

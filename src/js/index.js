@@ -1,3 +1,3 @@
 import '../scss/style.scss';
-
-console.log('Works!');
+import './popup.js';
+import './script.js';
